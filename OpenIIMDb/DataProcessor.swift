@@ -3,7 +3,7 @@ import Foundation
 
 class DataProcessor: Decodable {
 
-    static func mapJsonToSwiftObj<T:Decodable>(data: Data? ) -> T? {
+    static func mapJsonToSwiftObj<T:Decodable>(data: Data?) -> T? {
         var obj: T?
         
         guard let data = data else { return nil }
