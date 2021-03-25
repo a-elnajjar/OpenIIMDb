@@ -60,7 +60,7 @@ class SearchViewController:  UITableViewController, UISearchResultsUpdating, UIS
       }
       
       // 2
-      let keyboardHeight = keyboardFrame.cgRectValue.size.height
+        _ = keyboardFrame.cgRectValue.size.height
       UIView.animate(withDuration: 0.1, animations: { () -> Void in
         
         self.view.layoutIfNeeded()
@@ -142,7 +142,7 @@ class SearchViewController:  UITableViewController, UISearchResultsUpdating, UIS
     
     func parseDataIntoMovies(data: Data?) -> Void {
         if let movieData = data {
-            self.searchResults = DataProcessor.mapJsonToMovies( searchData: movieData, moviesKey: "Search")
+            self.searchResults = DataProcessor.mapJsonToSwiftObj( data: movieData)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
             }

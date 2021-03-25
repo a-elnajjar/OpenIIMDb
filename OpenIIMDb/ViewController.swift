@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainTableView.reloadData()
         super.viewWillAppear(animated)
         if favoriteMovies.count == 0 {
-            favoriteMovies.append(Movie(title: "tt0372784", year: "Batman Begins", imdbID: "2005", type: TypeEnum.movie,poster: "https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"))
+            favoriteMovies.append(Movie(title: "Batman Begins", year: "2005", imdbID: "2005", type: TypeEnum.movie,poster: "https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"))
         }
     }
     

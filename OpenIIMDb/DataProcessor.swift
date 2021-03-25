@@ -1,21 +1,20 @@
 
 import Foundation
 
-class DataProcessor {
+class DataProcessor: Decodable {
 
-    static func mapJsonToMovies(searchData: Data?, moviesKey: String) -> Search? {
-        var mappedMovies: Search?
+    static func mapJsonToSwiftObj<T:Decodable>(data: Data? ) -> T? {
+        var obj: T?
         
-        guard let moviesData = searchData else { return mappedMovies! }
+        guard let data = data else { return nil }
         
         do {
             let decoder = JSONDecoder()
-            mappedMovies = try decoder.decode(Search.self, from: moviesData)
-           
+            obj = try decoder.decode(T.self, from: data)
         } catch let serializationError {
             print(serializationError)
         }
-        return mappedMovies
+        return obj
     }
     
     static func write(movies: [Movie]) {

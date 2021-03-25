@@ -3,6 +3,8 @@ import Foundation
 
 
 struct Search: Codable {
+
+    
     let search: [Movie]
     let totalResults, response: String
 
